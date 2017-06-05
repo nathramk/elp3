@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">ExamLp3</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_about">Acerca de</string>
+
+    <string name="action_user">Usuario:</string>
+    <string name="action_password">Password:</string>
+    <string name="action_name">Nombre:</string>
+    <string name="action_lastName">apellido:</string>
+    <string name="action_ingresar">Ingresar</string>
+    <string name="action_registrarse">Registrarce</string>
+    <string name="action_cancelar">Cancelar</string>
+    <string name="login">Login XD!</string>
+    <string name="action_repeat">Repetir password</string>
+    <string name="action_register_title">Registrate XD!</string>
+    <string name="Modificas">Modificar XD!</string>
+    <string name="Modificass">Modificar</string>
+
+    <string name="select_contact">Seleccione contacto</string>
+
+
+
+
+    <string name="title_activity_main_regist">Registrar</string>
+    <string name="title_activity_main_fragmen">MainFragmenActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_mainpruev">Mainpruev</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_modificar">Modificar</string>
+    <string name="title_activity_about">Acerca de</string>
+
+</resources>
