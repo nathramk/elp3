@@ -1,5 +1,6 @@
 package pe.edu.upeu.servicerest.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,15 +22,23 @@ public class RestController {
 	@Autowired
 	@Qualifier("contactsDao")
 	protected ContactsDao contactsDao;
+	//@PathVariable String parametro
+	
+	@RequestMapping(value = "/servicerest/test", method = RequestMethod.GET, headers = "Accept=application/json")
+	public @ResponseBody String findtest() {		
+		return "Hola mundo";
+	}
+	
 	
 	@RequestMapping(value = "/servicerest/contactsAll/{parametro}", method = RequestMethod.GET, headers = "Accept=application/json")
 	public @ResponseBody List<Contacts> findContactsAll(@PathVariable String parametro) {		
-//		List<Campaign> list = new ArrayList<Campaign>();
-//		Campaign campaign = new Campaign();
+//		List<Contacts> list = new ArrayList<Contacts>();
+//		Contacts campaign = new Contacts();
 //		campaign.setId(1L);
-//		campaign.setCampaingName("Alumnos de Ingeniería de Sistemas");
+//		campaign.setAllName("Juan Perez");
+//		campaign.setNumberPhone("789522");
 //		list.add(campaign);
-//
+
 //		campaign = new Campaign();
 //		campaign.setId(2L);
 //		campaign.setCampaingName("Alumnos de Ingeniería de Ambiental");
@@ -59,13 +68,12 @@ public class RestController {
 		
 		Contacts is = new Contacts();
 		is.setAllName(parametro);
-
-//		campaignDao.save(campaign);
+//		contactsDao.save(is);
 
 		return contactsDao.findContactsAll();
 	}
 
-	@RequestMapping(value = "/servicerest/campaignmessage/{parametro}", method = RequestMethod.GET, headers = "Accept=application/json")
+	@RequestMapping(value = "/servicerest/contactmessage/{parametro}", method = RequestMethod.GET, headers = "Accept=application/json")
 	public @ResponseBody String findContacts(@PathVariable String parametro) {
 		
 		String string[]= parametro.split("-");
@@ -79,9 +87,10 @@ public class RestController {
 		contactsDao.save(con);
 		
 		return "hola mundo cruelll "+parametro;
+//		return "hola mundo cruelll ";
 	}
 	
-	@RequestMapping(value = "/servicerest/campaignbyid/{id}", method = RequestMethod.GET, headers = "Accept=application/json")
+	@RequestMapping(value = "/servicerest/contactbyid/{id}", method = RequestMethod.GET, headers = "Accept=application/json")
 	public @ResponseBody Contacts findContatsById(@PathVariable String id) {
 		
 		String string[]= id.split("-");
@@ -93,19 +102,19 @@ public class RestController {
 		return conts;
 	}
 
-	@RequestMapping(value = "/servicerest/campaignsave", method = RequestMethod.POST, headers = "Accept=application/json")
+	@RequestMapping(value = "/servicerest/contactsave", method = RequestMethod.POST, headers = "Accept=application/json")
 	public Contacts addCampaign(@RequestBody Contacts contacts) {
 		// return countryService.addCountry(country);
 		return null;
 	}
 
-	@RequestMapping(value = "/servicerest/campaignupdate", method = RequestMethod.PUT, headers = "Accept=application/json")
+	@RequestMapping(value = "/servicerest/contactupdate", method = RequestMethod.PUT, headers = "Accept=application/json")
 	public Contacts updateCountry(@RequestBody Contacts contacts) {
 		// return countryService.updateCountry(country);
 		return null;
 	}
 
-	@RequestMapping(value = "/campaigndelete/{id}", method = RequestMethod.DELETE, headers = "Accept=application/json")
+	@RequestMapping(value = "/contactndelete/{id}", method = RequestMethod.DELETE, headers = "Accept=application/json")
 	public void deleteCountry(@PathVariable("id") int id) {
 		// countryService.deleteCountry(id);
 	}

@@ -26,7 +26,7 @@
 
 
 
-    <bean id="campaignDao" class="pe.edu.upeu.servicerest.dao.ContactsDaoImpl"></bean>
+    <bean id="contactsDao" class="pe.edu.upeu.servicerest.dao.ContactsDaoImpl"></bean>
 
 
     <!--
